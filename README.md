@@ -159,23 +159,24 @@ Add an **Internal Note** (example):
 - Optionally confirm email/Teams/SSO/VPN
 
 **5) Closeout**
-Add a **Public Reply** (example):
--Per our call at 2:35 PM ET, we reset your password and confirmed sign-in. If anything stops working, just reply to this email and we’ll reopen the ticket.
 
-**Set Status to Resolved (reopen allowed) or Closed (final), per policy.**
+Add a **Public Reply** (example):
+- Per our call at 2:35 PM ET, we reset your password and confirmed sign-in. If anything stops working, just reply to this email and we’ll reopen the ticket.
 
 <p>
 <img width="947" height="503" alt="ticket 1 4 final reply" src="https://github.com/user-attachments/assets/dc0bb3b6-e92e-4956-989f-0f713fd65957" />
 </p>
+
+**Finishing: Set Status to Resolved (reopen allowed) or Closed (final), per policy.**
 
 ---
 
 
 ## Ticket 2 — Report a Problem → Hardware
 
-- First lets create another ticket as the **End-User (Support Center)**
-Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*
-**Help Topic:** Report a Problem / Hardware
+- First lets create another ticket as the **End-User (Support Center)**  
+Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*  
+**Help Topic:** `Report a Problem / Hardware`
 
 <p>
 <img width="822" height="671" alt="ticket 2 0 submit" src="https://github.com/user-attachments/assets/1a5e5792-72bb-4b33-8c04-14ff2e110320" />
@@ -183,11 +184,13 @@ Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*
 
 - Next lets login as your Tier 1 Agent:
 **Agent (Tier 1) — Check auto-routing**
-Dept Help Desk → Team PC Fix → Priority Normal → SLA P3 (24h Biz)
 
 <p>
 <img width="950" height="333" alt="ticket 2 1 login agent" src="https://github.com/user-attachments/assets/371b12c5-8d58-4bac-8623-c91860a37e08" />
 </p>
+
+- Dept **Help Desk** → Team **PC Fix** → Priority **Normal** → SLA **P3**
+
 <p>
 <img width="955" height="264" alt="ticket 2 2 confirm routing" src="https://github.com/user-attachments/assets/567fde11-921a-41f3-a8a9-5818e0ee22b1" />
 </p>
@@ -226,8 +229,9 @@ Add **Internal Note** (example):
 Assessment: Failed dock (WD19); user needs external display/power via dock.
 Action: Created Task → Maintenance to replace dock.
 
-
+<p>
 <img width="948" height="446" alt="ticket 2 4 actions" src="https://github.com/user-attachments/assets/85195360-578d-4b8b-ac0b-a873880a4abd" />
+</p>
 
 **5) Create Task → Maintenance (onsite hardware/peripheral)**
 
