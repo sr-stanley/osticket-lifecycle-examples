@@ -1,5 +1,5 @@
-# osticket-lifecycle-examples
 <p align="center">
+# osticket-lifecycle-examples
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
@@ -22,9 +22,9 @@ This guide walks you through a complete ticket lifecycle in **osTicket** from in
 - [Overview — Agent Panel](#overview--agent-panel)
 - [STEP 1 — Create a Ticket (End-User)](#step-1--create-a-ticket-end-user)
 - [STEP 2 — View the Ticket (Agent)](#step-2--view-the-ticket-agent)
+- [Ticket Status — Resolved vs Closed](#ticket-status--resolved-vs-closed)
 - [Ticket 1 — Account Issues → Password Reset](#ticket-1--account-issues--password-reset)
 - [Ticket 2 — Report a Problem → Hardware](#ticket-2--report-a-problem--hardware)
-- [Ticket Status — Resolved vs Closed](#ticket-status--resolved-vs-closed)
 
 ---
 
@@ -91,6 +91,14 @@ Agents use the **Agent Panel** for day-to-day ticket work.
 **Why this matters**
 - Agents validate **topic/priority/SLA**, gather missing info, and **document** all actions.  
 - If details are unclear, contact the requester, ask specific questions, and record interactions in **internal notes**.
+
+---
+
+## Ticket Status — Resolved vs Closed
+
+- Resolved → Solution provided; ticket can reopen if the user replies (often auto-closes after N days).
+- Closed → Final; no further action expected (users typically cannot reopen).
+- Tip: Use Resolved when you want a short feedback window; use Closed when it’s definitively done.
 
 ---
 
@@ -280,11 +288,10 @@ Window:
 
 Update Task (actions/parts/asset IDs) → Close Task
 
-Maintenance Task Note (example):
+Add Maintenance **Close Task** Note (example):
 
-Onsite 10:12–10:35 ET. Replaced WD19 dock; fitted 130W PSU; replaced DP cable.
-Validation: Charging LED on; POST/boot; external display OK; USB/Ethernet OK.
-Assets: New DOCK-2217; removed DOCK-1984 for RMA. Closing Task.
+- Replaced dock (Dell WD19). Laptop powers on; passes POST/boot.
+Task closed. User confirms normal operation.
 
 <p>
 <img width="642" height="306" alt="ticket 2 7 close task and post internal note" src="https://github.com/user-attachments/assets/c913093e-5a1d-415b-b399-21dfe6286b1a" />
@@ -296,7 +303,7 @@ Post a short public wrap-up, then close.
 
 Add a **Public Reply** (example):
 
-We replaced your desk dock and confirmed your laptop powers on, boots, and the external display works.
+- We replaced your desk dock and confirmed your laptop powers on, boots, and the external display works.
 If anything regresses, just reply here and we’ll reopen the ticket.
 
 
@@ -318,13 +325,6 @@ Why this matters: Tickets remain owned/closed by Help Desk (single point of acco
 
 
 
-Ticket Status — Resolved vs Closed
-
-Resolved → Solution provided; ticket can reopen if the user replies (often auto-closes after N days).
-
-Closed → Final; no further action expected (users typically cannot reopen).
-
-Tip: Use Resolved when you want a short feedback window; use Closed when it’s definitively done.
 
 
 
@@ -340,37 +340,4 @@ Tip: Use Resolved when you want a short feedback window; use Closed when it’s 
 
 
 
-
-
-<h2>Ticket Lifecycle Stages</h2>
-
-- Intake
-- Assignment and Communication
-- Working the Issue
-- Resolution
-
-<h2>Lifecycle Stages</h2>
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
 <br />
