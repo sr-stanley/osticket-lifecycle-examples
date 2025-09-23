@@ -5,7 +5,7 @@
 
 <h1>osTicket - Ticket Lifecycle: Intake Through Resolution</h1>
 
-This guide walks you through a complete ticket lifecycle in **osTicket** from intake to resolution. You’ll play the roles of the **end user** and the **three agents** you created earlier. Each step includes a short note on **why it matters**.
+This guide walks you through a complete ticket lifecycle in **osTicket** from intake to resolution. You’ll play the roles of the **end user** and the **three agents** you created earlier. Each step includes a short note on **why it matters**. We will not be able to perform the actual work but we will act as if we did.
 
 <h2>Environments and Technologies Used</h2>
 
@@ -68,7 +68,7 @@ Agents use the **Agent Panel** for day-to-day ticket work.
 <img width="836" height="924" alt="0 1 create a ticket" src="https://github.com/user-attachments/assets/1726b511-60b3-44c4-8799-6403fe8fcba6" />
 </p>
 
-**Why this matters**
+**Why this matters:**
 - Help Topics can **auto-apply Priority/SLA** (e.g., “Business Critical Outage” → Emergency/P1).  
 - Users often choose the **wrong** topic. Agents should review details and **reclassify** topic/priority/SLA when needed. If you lack permissions, escalate to a supervisor/admin and **document** your reasoning in the ticket.
 
@@ -88,7 +88,7 @@ Agents use the **Agent Panel** for day-to-day ticket work.
 <img width="956" height="905" alt="0 3 view ticket details" src="https://github.com/user-attachments/assets/7daf0d72-59a9-4f26-94c5-9a2a65928aba" />
 </p>
 
-**Why this matters**
+**Why this matters:**
 - Agents validate **topic/priority/SLA**, gather missing info, and **document** all actions.  
 - If details are unclear, contact the requester, ask specific questions, and record interactions in **internal notes**.
 
@@ -136,7 +136,7 @@ Submit: *“Forgot password, need password reset.”*
 - For higher risk, require **two** strong factors. **Never** rely on caller ID/SMS alone.
 
 Add an **Internal Note** (example):
-- Identity verified via callback to phone-on-file (ending *1234*).
+- Identity verified via callback to phone-on-file and employee ID.
 
 <p>
 <img width="948" height="336" alt="ticket 1 3 verify" src="https://github.com/user-attachments/assets/a665535f-9099-418f-b487-93fe6b52ce67" />
@@ -286,8 +286,6 @@ Window:
 - Brief hardware diagnostics (if it powers)
 - If still no power → device swap per SOP; capture new asset
 
-Update Task (actions/parts/asset IDs) → Close Task
-
 Add Maintenance **Close Task** Note (example):
 
 - Replaced dock (Dell WD19). Laptop powers on; passes POST/boot.
@@ -309,34 +307,15 @@ If anything regresses, just reply here and we’ll reopen the ticket.
 
 Add an **Internal Closing Note** (example):
 
-Outcome: Dock replaced (DOCK-2217). Laptop powers/boots; external display OK.
-Validation: Charging via dock; USB/Ethernet OK. User confirmed at 14:20 ET.
-References: Task MAINT-417 closed. Asset record updated.
+- Replaced dock (Dell WD19). Laptop powers on; passes POST/boot.
+Task closed. User confirms normal operation.
 
 <p>
 <img width="642" height="306" alt="ticket 2 7 close task and post internal note" src="https://github.com/user-attachments/assets/01f61d7b-bc65-471b-a79c-8bde3eec8a64" />
 </p>
 
 
-Why this matters: Tickets remain owned/closed by Help Desk (single point of accountability). Tasks track onsite work separately for Maintenance.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Why this matters:** Tickets remain owned/closed by Help Desk (single point of accountability). Tasks track onsite work separately for Maintenance.
 
 
 
