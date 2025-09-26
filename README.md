@@ -25,7 +25,7 @@ This guide walks you through a complete ticket lifecycle in **osTicket** from in
 - [Ticket Status — Resolved vs Closed](#ticket-status--resolved-vs-closed)
 - [Ticket 1 — Account Issues → Password Reset](#ticket-1--account-issues--password-reset)
 - [Ticket 2 — Report a Problem → Hardware](#ticket-2--report-a-problem--hardware)
-- 
+- [Ticket 3 — Mis-categorized “Report a Problem” → Service Outage](#ticket-3--mis-categorized-"report-a-problem"--service-outage)
 
 ---
 
@@ -149,6 +149,7 @@ Add an **Internal Note** (example):
 - MFA status (lost/stolen device? re-register needed?)
 
 **3) Reset / clear lock**
+
 - Unlock if locked
 - Reset password per policy (temporary; force change on next sign-in if required)
 - If MFA device is lost, remove old factor(s) so the user can re-register
@@ -205,7 +206,7 @@ Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*
 
 ### Resolution Steps
 
-**1) Verify Identity**
+**1) Identity/ownership check (risk-based)**
 - Light: reply from corporate email or asset tag + desk location
 - Strong (for swaps/data access): callback to phone-on-file and badge/manager approval
 
@@ -320,3 +321,199 @@ Task closed. User confirms normal operation.
 
 
 <br />
+
+
+
+
+
+# Ticket 3 — Mis-categorized “Report a Problem” → Service Outage
+
+- First lets create another ticket as the **End-User (Support Center)**  
+Submit: *“Teams won’t sign in; email also failing across our floor.”*  
+**Help Topic:** `Report a Problem`
+
+- **Expected routing:** Dept **Help Desk**, **SLA: Default (Transient)**
+
+<p>
+<img width="834" height="674" alt="0 0 submit ticket" src="https://github.com/user-attachments/assets/0d8853b9-6b46-4d10-a4a0-ecf16dcb2991" />
+</p>
+
+### Resolution Steps
+
+- Login as your Tier 1 Agent:
+
+**1) Verify Identity (before any changes)**
+- Callback to **phone-on-file** (directory/HRIS)  
+- **Manager approval** from a corporate mailbox  
+- Authenticated **portal** challenge (user confirms a *non-sensitive* detail)  
+- In-person **badge** check  
+- For higher-risk cases, use **two** strong factors
+
+Add a **Internal Note** (example):
+- Identity verified via manager-approved email confirmation.
+
+
+**2) Quick Scope & Triage**
+
+Because the report may be broader than one user, T1 should immediately check scope:
+
+- Are there multiple new tickets with the same symptom?
+- Check internal chat/bridge for chatter
+- Fast tests (lab/test machine):
+  - OWA/Outlook sign-in
+  - Teams sign-in
+
+Add a **Internal Note** (example) and assign to your **Supervisor**agent:
+- "Scope: Multiple new tickets with identical symptoms (Email/Teams sign-in failures).
+Checks: OWA sign-in fails; Teams shows auth error from test machine.
+Recommendation: Reclassify to Service Outage / Major Incident.
+Action: Escalated/assigned to Supervisor at xx:xx ET; awaiting comms cadence."
+
+<p>
+<img width="640" height="247" alt="0 1 assign" src="https://github.com/user-attachments/assets/1bd5c6f1-22bb-42f0-a77f-da176122c22a" />
+</p>
+<p>
+<img width="954" height="580" alt="0 2 escalate" src="https://github.com/user-attachments/assets/3396c6a0-91af-4622-9fbb-1c6ebc425717" />
+</p>
+
+Add a **Public Reply** (acknowledgement while you escalate):
+- "We’re investigating a broader sign-in issue affecting Email/Teams. I’ve alerted our incident lead.
+Thank you for your patience."
+
+
+**3) Re-categorize Ticket**
+
+Log out as Tier 1 and sign in as your Supervisor.
+
+**Supervisor actions**
+
+Change the following:
+- Help Topic → Service Outage
+- Department → Systems (Recommended) Check “Maintain referral access to current department” so Help Desk can keep posting user-facing updates.
+- Priority → Emergency
+- SLA → P1 Critical
+
+If you had additional tickets, you’d make this the Parent by using More → Link to attach related (child) tickets.
+
+<p></p>
+<img width="641" height="331" alt="1 0 link" src="https://github.com/user-attachments/assets/3df06985-e42d-49ab-a1df-1a9bf85b3523" />
+</p>
+
+Add a **Internal Note** (example):
+- "Reclassified to Service Outage.
+Routing: Dept → Systems, Priority → Emergency, SLA → P1 (24×7).
+This ticket designated as PARENT TICKET for M365 auth failure."
+
+
+Add a **Public Reply** (initial incident notice):
+- "We’re investigating a service issue affecting sign-ins to Email/Teams.
+Next update in ~30 minutes. Thank you for your patience."
+
+<p></p>
+<img width="952" height="575" alt="1 1 super notes" src="https://github.com/user-attachments/assets/6a7d62f3-c096-4588-b4ec-5c983c94bc03" />
+</p>
+
+
+
+**4) Supervisor — Lead the Incident (Updates & Investigation)**
+
+Start/announce your comms cadence (e.g., every 30 minutes until mitigation).
+
+Coordinate Systems to check:
+
+Provider status (e.g., Microsoft 365 health)
+
+Identity/CA/IdP (Entra/SSO) sign-in logs
+
+Network/DNS/firewall egress to auth endpoints
+
+Recent changes (policy, updates, certs, certs/proxies)
+
+Internal Note (investigation log — rolling):
+
+xx:xx ET – Incident bridge opened; Systems engaged.
+xx:xx ET – M365 Service Health indicates auth issues in our region.
+xx:xx ET – Firewall/DNS checks OK; no local change correlated.
+xx:xx ET – Impact confirmed: Email/Teams auth failures org-wide; no data loss suspected.
+
+
+Public Reply (timed update — every 30–60 min):
+
+[Update xx:xx ET] We’ve confirmed a provider-side authentication issue affecting Email/Teams.
+We are monitoring vendor recovery and validating workarounds. Next update by xx:xx ET.
+
+T1 — Link Related (Child) Tickets
+
+(For understanding; if you only have one ticket, skip this step.)
+
+As Tier 1, for each similar ticket:
+
+More → Link → select the Parent Incident ticket
+
+Post short notes:
+
+Child — Internal Note:
+
+Linked to Parent Incident #<parent-ticket#> (M365 auth). Follow parent for updates.
+
+
+Child — Public Reply:
+
+We’ve linked your ticket to an active incident affecting Email/Teams sign-ins.
+Please follow updates on this thread; we’ll post again by xx:xx ET.
+
+
+Optionally merge only true duplicates from the same user.
+
+Supervisor — Recovery & Validation
+
+When the vendor reports recovery, validate internally:
+
+Test OWA/Outlook, Teams, and one SSO app
+
+Confirm with 2–3 sample users across locations
+
+Check sign-in error rates trending down
+
+Internal Note (recovery confirmation):
+
+xx:xx ET – Vendor reports mitigation complete.
+xx:xx ET – Internal tests successful (OWA, Teams, SSO).
+xx:xx ET – Sample users (User 1, User 2) confirm sign-in success.
+
+
+Public Reply (restoration notice):
+
+[Resolved xx:xx ET] Sign-ins to Email/Teams are working again.
+If you still have issues, please restart your app and try again; reply here if problems persist.
+
+Closeout — Final Comms, RCA Blurb, Closure
+
+Parent (public final summary):
+
+Final Update – Incident Resolved
+
+Cause (per vendor): Transient authentication issue impacting our region.
+Impact: Email/Teams sign-ins failed for some users between ~xx:xx–xx:xx ET.
+Actions: Monitored vendor recovery; validated sign-in across sites; no data loss observed.
+Next steps: Vendor is reviewing safeguards; we will monitor for recurrence.
+
+If you continue to experience sign-in issues, reply here and we’ll assist.
+
+
+Child tickets — close/resolve each with a short public note:
+
+This was part of the Email/Teams sign-in incident. Service has been restored.
+If you’re still affected, reply here and we’ll reopen.
+
+
+Parent — Internal Note (closing summary):
+
+Outcome: Service restored xx:xx ET; users validated across sites.
+Root cause: Vendor authentication incident (regional).
+Timeline: xx:xx incident declared; xx:xx/xx:xx updates; xx:xx resolved.
+Actions: Bridge coordination; vendor comms; validation tests; user updates.
+Follow-up: Track vendor RCA; add Problem record; no internal changes required.
+
+
+Finally, Close the parent incident.
