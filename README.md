@@ -25,6 +25,7 @@ This guide walks you through a complete ticket lifecycle in **osTicket** from in
 - [Ticket Status — Resolved vs Closed](#ticket-status--resolved-vs-closed)
 - [Ticket 1 — Account Issues → Password Reset](#ticket-1--account-issues--password-reset)
 - [Ticket 2 — Report a Problem → Hardware](#ticket-2--report-a-problem--hardware)
+- 
 
 ---
 
@@ -148,7 +149,6 @@ Add an **Internal Note** (example):
 - MFA status (lost/stolen device? re-register needed?)
 
 **3) Reset / clear lock**
-
 - Unlock if locked
 - Reset password per policy (temporary; force change on next sign-in if required)
 - If MFA device is lost, remove old factor(s) so the user can re-register
@@ -205,7 +205,7 @@ Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*
 
 ### Resolution Steps
 
-**1) Identity/ownership check (risk-based)**
+**1) Verify Identity**
 - Light: reply from corporate email or asset tag + desk location
 - Strong (for swaps/data access): callback to phone-on-file and badge/manager approval
 
