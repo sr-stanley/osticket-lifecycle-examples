@@ -25,7 +25,7 @@ This guide walks you through a complete ticket lifecycle in **osTicket** from in
 - [Ticket Status — Resolved vs Closed](#ticket-status--resolved-vs-closed)
 - [Ticket 1 — Account Issues → Password Reset](#ticket-1--account-issues--password-reset)
 - [Ticket 2 — Report a Problem → Hardware](#ticket-2--report-a-problem--hardware)
-- [Ticket 3 — Mis-categorized “Report a Problem” → Service Outage](#ticket-3--mis-categorized-"report-a-problem"--service-outage)
+- [Ticket 3 — Mis-categorized “Report a Problem” → Service Outage](#ticket-3--mis-categorized-report-a-problem--service-outage)
 
 ---
 
@@ -327,7 +327,7 @@ Task closed. User confirms normal operation.
 
 ---
 
-# Ticket 3 — Mis-categorized “Report a Problem” → Service Outage
+## Ticket 3 — Mis-categorized “Report a Problem” → Service Outage
 
 - First lets create another ticket as the **End-User (Support Center)**  
 Submit: *“Teams won’t sign in; email also failing across our floor.”*  
