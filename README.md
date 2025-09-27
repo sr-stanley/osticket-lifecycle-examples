@@ -1,5 +1,4 @@
 <p align="center">
-# osticket-lifecycle-examples
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
@@ -60,7 +59,7 @@ Agents use the **Agent Panel** for day-to-day ticket work. This is where you **t
 ## STEP 1 — Create a Ticket (End-User)
 
 - From the Support Center home page click **Open a New Ticket** → enter **Email** and **Name** → select a **Help Topic** → fill **Summary** and **Description**.
-- Help Topics can **auto-apply Priority/SLA** (e.g., “Business Critical Outage” → Emergency/P1).  
+- Help Topics can **auto-apply Priority/SLAs**.  
 - Users often choose the **wrong** topic. Agents should review details and **reclassify** topic/priority/SLA when needed. If you lack permissions, escalate to a supervisor/admin and **document** your reasoning in the ticket.
 
 <p>
@@ -98,7 +97,7 @@ Agents use the **Agent Panel** for day-to-day ticket work. This is where you **t
 ## Ticket 1 — Account Issues → Password Reset
 Password resets can apply to many services (e.g., Microsoft 365/Email/Teams, VPN, Wi-Fi, CRM/ERP). We’ll keep this **generic**.
 
-- First lets create a ticket as the **End-User (Support Center)**  
+- First let's create a ticket as the **End-User (Support Center)**  
 Submit: *“Forgot password, need password reset.”*  
 **Help Topic:** `Account Issues / Password Reset`
 
@@ -106,13 +105,13 @@ Submit: *“Forgot password, need password reset.”*
 <img width="835" height="684" alt="ticket 1 0 submit" src="https://github.com/user-attachments/assets/3ab2340f-5989-48e8-aa84-dab28372d5fc" />
 </p>
 
-- Next, lets login as your **Tier 1 Agent** and check **auto-routing**.
+- Next, let's login as your **Tier 1 Agent** and check **auto-routing**.
 
 <p>
 <img width="953" height="356" alt="ticket 1 1 login agent" src="https://github.com/user-attachments/assets/309a4cff-0c81-47d1-8540-cb6e99c397f0" />
 </p>
 
-- Department **Help Desk** → Team **Accounts & Passwords** → Priority **Normal** → SLA **P3**
+- `Department: Help Desk` → `Team: Accounts & Passwords` → `Priority: Normal` → `SLA: P3`
 
 <p>
 <img width="955" height="268" alt="ticket 1 2 confirm routing" src="https://github.com/user-attachments/assets/d31f7e5a-937d-45da-89c3-f14ac12fb343" />
@@ -179,7 +178,7 @@ Per our call at xx:xx PM ET, we reset your password and confirmed sign-in. If an
 
 ## Ticket 2 — Report a Problem → Hardware
 
-- Lets create another ticket as the **End-User (Support Center)**  
+- Let's create another ticket as the **End-User (Support Center)**  
 Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*  
 **Help Topic:** `Report a Problem / Hardware`
 
@@ -187,13 +186,13 @@ Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*
 <img width="822" height="671" alt="ticket 2 0 submit" src="https://github.com/user-attachments/assets/1a5e5792-72bb-4b33-8c04-14ff2e110320" />
 </p>
 
-- Next lets login as your **Tier 1 Agent** and check **auto-routing**.
+- Next let's login as your **Tier 1 Agent** and check **auto-routing**.
 
 <p>
 <img width="950" height="333" alt="ticket 2 1 login agent" src="https://github.com/user-attachments/assets/371b12c5-8d58-4bac-8623-c91860a37e08" />
 </p>
 
-- Department **Help Desk** → Team **PC Fix** → Priority **Normal** → SLA **P3**
+- `Department: Help Desk` → `Team: PC Fix` → `Priority: Normal` → `SLA: P3`
 
 <p>
 <img width="955" height="264" alt="ticket 2 2 confirm routing" src="https://github.com/user-attachments/assets/567fde11-921a-41f3-a8a9-5818e0ee22b1" />
@@ -234,7 +233,7 @@ Add **Internal Note** (example):
 ```text
 Bypass: USB-C from dock fully disconnected. OEM 130W barrel adapter direct to laptop → powers on and POSTs OK.
 Assessment: Failed dock (WD19); user needs external display/power via dock.
-Action: Created Task → Maintenance to replace dock.`
+Action: Created Task → Maintenance to replace dock.
 ```
 
 <p>
@@ -274,7 +273,7 @@ Window:
 </p>
 
 **6) Maintenance works the Task**
-- Log out of your **Tier 1 Agents** profile and log into the **Maintenance Technicians** profile. Click on **Tasks** tab and view the task.
+- Log out of your **Tier 1 Agent's** profile and log into the **Maintenance Technician's** profile. Click on `Tasks` tab and view the task.
 
 <p>
 <img width="953" height="354" alt="ticket 2 6 view task as maintenance worker" src="https://github.com/user-attachments/assets/9e2481b7-cf0b-4ebd-8019-906cd2ba9874" />
@@ -296,7 +295,7 @@ Task closed. User confirms normal operation.
 </p>
 
 **7) Help Desk closes the Ticket**
-- Log out of **Maintenance Technicians** profile and log into your **Tier 1 Agents** profile.
+- Log out of **Maintenance Technician's** profile and log into your **Tier 1 Agent's** profile.
 - Post a short public wrap-up, then close.
 - Tickets remain owned/closed by Help Desk (single point of accountability). Tasks track onsite work separately for Maintenance.
 - Add a closing public reply and then close the ticket.
@@ -321,7 +320,7 @@ Task closed. User confirms normal operation.
 
 ## Ticket 3 — Mis-categorized “Report a Problem” → Service Outage
 
-- First lets create another ticket as the **End-User (Support Center)**  
+- First let's create another ticket as the **End-User (Support Center)**  
 Submit: *“Teams won’t sign in; email also failing across our floor.”*  
 **Help Topic:** `Report a Problem`
 
@@ -342,7 +341,7 @@ Submit: *“Teams won’t sign in; email also failing across our floor.”*
 - In-person **badge** check  
 - For higher-risk cases, use **two** strong factors
 
-Add a **Internal Note** (example):
+Add an **Internal Note** (example):
 ```text
 Identity verified via manager-approved email confirmation.
 ```
@@ -357,11 +356,11 @@ Because the report may be broader than one user, T1 should immediately check sco
   - OWA/Outlook sign-in
   - Teams sign-in
 
-Add a **Internal Note** (example) and assign to your **Supervisor Agent** (example):
+Add an **Internal Note** (example) and assign to your **Supervisor Agent** (example):
 ```text
 Scope: Multiple new tickets with identical symptoms (Email/Teams sign-in failures).
 Checks: OWA sign-in fails; Teams shows auth error from test machine.
-Recommendation: Reclassify to Service Outage / Major Incident.
+Recommendation: Reclassify to Service Outage.
 Action: Escalated/assigned to Supervisor at xx:xx ET; awaiting comms cadence.
 ```
 
@@ -380,23 +379,23 @@ Thank you for your patience.
 
 **3) Re-categorize Ticket**
 
-Log out of your **Tier 1 Agents** profile and sign into your **Supervisor Agents** profile.
+Log out of your **Tier 1 Agent's** profile and sign into your **Supervisor Agent's** profile.
 
 **Supervisor Actions**
 
 Change the following:
-- Help Topic → Service Outage
-- Department → Systems (Recommended) Check “Maintain referral access to current department” so Help Desk can keep posting user-facing updates.
-- Priority → Emergency
-- SLA → P1 Critical
+- `Help Topic` → Service Outage
+- `Department` → Systems (Recommended) Check “Maintain referral access to current department” so Help Desk can keep posting user-facing updates.
+- `Priority` → Emergency
+- `SLA` → P1 Critical
 
-**If you had additional tickets, you’d make this the Parent by using More → Link to attach related (child) tickets. See below for more information about this.**
+**If you had additional tickets, you’d make this the Parent by using `More → Link` to attach related (child) tickets. See below for more information about this.**
 
 <p></p>
 <img width="641" height="331" alt="1 0 link" src="https://github.com/user-attachments/assets/3df06985-e42d-49ab-a1df-1a9bf85b3523" />
 </p>
 
-Add a **Internal Note** (example):
+Add an **Internal Note** (example):
 ```text
 Reclassified to Service Outage.
 Routing: Department → Systems, Priority → Emergency, SLA → P1.
@@ -416,7 +415,7 @@ Next update in ~30 minutes. Thank you for your patience."
 **4) Supervisor Becomes Incident Lead (Updates & Investigation)**
 
 **Actions**
-- Launch a incident channel/bridge (if your SOP uses one)
+- Launch an incident channel/bridge (if your SOP uses one)
   - Start/announce your comms cadence (e.g., every 30 minutes until mitigation).
 - Coordinate Systems to check:
   - Provider status (e.g., Microsoft 365 health)
@@ -424,7 +423,7 @@ Next update in ~30 minutes. Thank you for your patience."
   - Network/DNS/firewall egress to auth endpoints
   - Recent changes (policy, updates, certificates, proxies)
 
-Add a **Internal Note** (investigation log):
+Add an **Internal Note** (investigation log):
 ```text
 xx:xx ET – Incident bridge opened; Systems engaged.
 xx:xx ET – M365 Service Health indicates auth issues in our region.
@@ -440,11 +439,11 @@ We are monitoring vendor recovery and validating workarounds. Next update by xx:
 
 
 **Procedure for linking *Child* tickets**
-*(Since we only have the one ticket open this is soley for understanding purposes.)*
+*(Since we only have the one ticket open this is solely for understanding purposes.)*
 
 While the **Supervisor Agent** is doing their job the **Tier 1 Agent** would start linking related (Child) tickets.
 - As **Tier 1 Agent**, for each similar ticket:
-  - More → Link → select the Parent Incident ticket
+  - `More → Link` → select the Parent Incident ticket
 
 **Post short notes** (example):
 
@@ -467,7 +466,7 @@ Please follow updates on this thread; we’ll post again by xx:xx ET.
   - Confirm with 2–3 sample users across locations
   - Check sign-in error rates trending down
 
-Add a **Internal Note** (recovery confirmation):
+Add an **Internal Note** (recovery confirmation):
 ```text
 xx:xx ET – Vendor reports mitigation complete.
 xx:xx ET – Internal tests successful (OWA, Teams, SSO).
@@ -518,4 +517,4 @@ Follow-up: Track vendor RCA; add Problem record; no internal changes required.
 
 ---
 
-**Congrats! Your first few mock tickets are in the books!** Keep the momentum going by using an AI to generate fresh scenarios and sharpen your workflow.
+**🎉Congrats! Your first few mock tickets are in the books!** Keep the momentum going by using an AI to generate fresh scenarios and sharpen your workflow.
