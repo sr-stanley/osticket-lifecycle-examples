@@ -29,27 +29,25 @@ This guide walks you through a complete ticket lifecycle in **osTicket** from in
 
 ---
 
-## Open two windows
-  1. **Agent/Admin Panel:** `http://localhost/osTicket/scp/login.php`  
-  2. **Support Center (End-User Portal):** `http://localhost/osTicket/`<br />
+## Open Two Windows
+  1. **Agent/Admin Panel:** `http://localhost/osTicket/scp/login.php`
+  2. **Support Center (End-User Portal):** `http://localhost/osTicket/`
 
 ---
 
 ## Overview — Support Center
-The **Support Center** is the web portal where users submit and track tickets.
+The **Support Center** is the web portal where users submit and track tickets. It’s the **intake** channel. The **Help Topic** chosen here can auto-set **Priority** and **SLA**, affecting routing and due dates.
 
 <p>
 <img width="837" height="482" alt="0 0 user interface" src="https://github.com/user-attachments/assets/b7ad4b17-462c-4118-8c02-5f4cc1724d11" />
-</p>
-
-**Why this matters:** It’s the **intake** channel. The **Help Topic** chosen here can auto-set **Priority** and **SLA**, affecting routing and due dates.
+</p> 
 
 ---
 
 ## Overview — Agent Panel
-Agents use the **Agent Panel** for day-to-day ticket work.
+Agents use the **Agent Panel** for day-to-day ticket work. This is where you **triage, communicate, and drive resolution** (system configuration is in the Admin Panel).
 
-**What agents can do**
+**What agents can do**:
 - View/create/manage tickets, reply to users
 - Assign/transfer to **Departments**, **Teams**, or **Agents**
 - Track **Status**, **Priority**, **SLA**, **Due** dates
@@ -57,27 +55,25 @@ Agents use the **Agent Panel** for day-to-day ticket work.
 - Add **internal notes** for collaboration
 - Use **Help Topics** and **Canned Replies** for consistency
 
-**Why this matters:** This is where you **triage, communicate, and drive resolution** (system configuration is in the Admin Panel).
-
 ---
 
 ## STEP 1 — Create a Ticket (End-User)
 
 - From the Support Center home page click **Open a New Ticket** → enter **Email** and **Name** → select a **Help Topic** → fill **Summary** and **Description**.
+- Help Topics can **auto-apply Priority/SLA** (e.g., “Business Critical Outage” → Emergency/P1).  
+- Users often choose the **wrong** topic. Agents should review details and **reclassify** topic/priority/SLA when needed. If you lack permissions, escalate to a supervisor/admin and **document** your reasoning in the ticket.
 
 <p>
 <img width="836" height="924" alt="0 1 create a ticket" src="https://github.com/user-attachments/assets/1726b511-60b3-44c4-8799-6403fe8fcba6" />
 </p>
-
-**Why this matters:**
-- Help Topics can **auto-apply Priority/SLA** (e.g., “Business Critical Outage” → Emergency/P1).  
-- Users often choose the **wrong** topic. Agents should review details and **reclassify** topic/priority/SLA when needed. If you lack permissions, escalate to a supervisor/admin and **document** your reasoning in the ticket.
 
 ---
 
 ## STEP 2 — View the Ticket (Agent)
 
 - Log in to the **Agent Panel** and find the ticket. The list view shows **Last Updated, Subject, Requester, Priority, Assignee**.
+- Agents validate **topic/priority/SLA**, gather missing info, and **document** all actions.  
+- If details are unclear, contact the requester, ask specific questions, and record interactions in **internal notes**.
 
 <p>
 <img width="954" height="372" alt="0 2 view ticket as agent" src="https://github.com/user-attachments/assets/36166834-556a-4583-9d57-bf239ff1b7b1" />
@@ -89,15 +85,11 @@ Agents use the **Agent Panel** for day-to-day ticket work.
 <img width="956" height="905" alt="0 3 view ticket details" src="https://github.com/user-attachments/assets/7daf0d72-59a9-4f26-94c5-9a2a65928aba" />
 </p>
 
-**Why this matters:**
-- Agents validate **topic/priority/SLA**, gather missing info, and **document** all actions.  
-- If details are unclear, contact the requester, ask specific questions, and record interactions in **internal notes**.
-
 ---
 
 ## Ticket Status — Resolved vs Closed
 
-- Resolved → Solution provided; ticket can reopen if the user replies (often auto-closes after N days).
+- Resolved → Solution provided; ticket can reopen if the user replies (often auto-closes after a set amount of days).
 - Closed → Final; no further action expected (users typically cannot reopen).
 - Tip: Use Resolved when you want a short feedback window; use Closed when it’s definitively done.
 
@@ -114,8 +106,7 @@ Submit: *“Forgot password, need password reset.”*
 <img width="835" height="684" alt="ticket 1 0 submit" src="https://github.com/user-attachments/assets/3ab2340f-5989-48e8-aa84-dab28372d5fc" />
 </p>
 
-- Next lets login as your Tier 1 Agent:
-**Check auto-routing**
+- Next, lets login as your **Tier 1 Agent** and check **auto-routing**.
 
 <p>
 <img width="953" height="356" alt="ticket 1 1 login agent" src="https://github.com/user-attachments/assets/309a4cff-0c81-47d1-8540-cb6e99c397f0" />
@@ -175,7 +166,7 @@ Actions: Cleared lockout; set temporary password (communicated verbally).
 
 Add a **Public Reply** (example):
 ```text
-Per our call at 2:35 PM ET, we reset your password and confirmed sign-in. If anything stops working, just reply to this email and we’ll reopen the ticket.
+Per our call at xx:xx PM ET, we reset your password and confirmed sign-in. If anything stops working, just reply to this email and we’ll reopen the ticket.
 ```
 
 <p>
@@ -188,7 +179,7 @@ Per our call at 2:35 PM ET, we reset your password and confirmed sign-in. If any
 
 ## Ticket 2 — Report a Problem → Hardware
 
-- First lets create another ticket as the **End-User (Support Center)**  
+- Lets create another ticket as the **End-User (Support Center)**  
 Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*  
 **Help Topic:** `Report a Problem / Hardware`
 
@@ -196,8 +187,7 @@ Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*
 <img width="822" height="671" alt="ticket 2 0 submit" src="https://github.com/user-attachments/assets/1a5e5792-72bb-4b33-8c04-14ff2e110320" />
 </p>
 
-- Next lets login as your Tier 1 Agent:
-**Check auto-routing**
+- Next lets login as your **Tier 1 Agent** and check **auto-routing**.
 
 <p>
 <img width="950" height="333" alt="ticket 2 1 login agent" src="https://github.com/user-attachments/assets/371b12c5-8d58-4bac-8623-c91860a37e08" />
@@ -306,8 +296,10 @@ Task closed. User confirms normal operation.
 </p>
 
 **7) Help Desk closes the Ticket**
-- Log out of **Maintenance Technicians** profile and log into your **Tier 1 Agents** profile. Add a closing public reply and then close the ticket.
-Post a short public wrap-up, then close. **Why this matters:** Tickets remain owned/closed by Help Desk (single point of accountability). Tasks track onsite work separately for Maintenance.
+- Log out of **Maintenance Technicians** profile and log into your **Tier 1 Agents** profile.
+- Post a short public wrap-up, then close.
+- Tickets remain owned/closed by Help Desk (single point of accountability). Tasks track onsite work separately for Maintenance.
+- Add a closing public reply and then close the ticket.
 
 Add a **Public Reply** (example):
 ```text
@@ -341,7 +333,7 @@ Submit: *“Teams won’t sign in; email also failing across our floor.”*
 
 ### Resolution Steps
 
-- Login as your ***Tier 1 Agent**.
+- Login as your **Tier 1 Agent**.
 
 **1) Verify Identity (before any changes)**
 - Callback to **phone-on-file** (directory/HRIS)  
@@ -365,7 +357,7 @@ Because the report may be broader than one user, T1 should immediately check sco
   - OWA/Outlook sign-in
   - Teams sign-in
 
-Add a **Internal Note** (example) and assign to your **Supervisor**agent:
+Add a **Internal Note** (example) and assign to your **Supervisor Agent** (example):
 ```text
 Scope: Multiple new tickets with identical symptoms (Email/Teams sign-in failures).
 Checks: OWA sign-in fails; Teams shows auth error from test machine.
@@ -388,7 +380,7 @@ Thank you for your patience.
 
 **3) Re-categorize Ticket**
 
-Log out of your **Tier 1 Agents** profile and sign into your **Supervisors** profile.
+Log out of your **Tier 1 Agents** profile and sign into your **Supervisor Agents** profile.
 
 **Supervisor Actions**
 
@@ -417,7 +409,7 @@ We’re investigating a service issue affecting sign-ins to Email/Teams.
 Next update in ~30 minutes. Thank you for your patience."
 ```
 
-<p></p>
+<p>
 <img width="952" height="575" alt="1 1 super notes" src="https://github.com/user-attachments/assets/6a7d62f3-c096-4588-b4ec-5c983c94bc03" />
 </p>
 
@@ -446,6 +438,7 @@ Add a **Public Reply** (timed update — every 30–60 min):
 We are monitoring vendor recovery and validating workarounds. Next update by xx:xx ET.
 ```
 
+
 **Procedure for linking *Child* tickets**
 *(Since we only have the one ticket open this is soley for understanding purposes.)*
 
@@ -455,12 +448,12 @@ While the **Supervisor Agent** is doing their job the **Tier 1 Agent** would sta
 
 **Post short notes** (example):
 
-- Child — Internal Note:
+- Child → Internal Note:
 ```text
 Linked to Parent Incident #<parent-ticket#> (M365 auth). Follow parent for updates.
 ```
 
-- Child — Public Reply:
+- Child → Public Reply:
 ```text
 We’ve linked your ticket to an active incident affecting Email/Teams sign-ins.
 Please follow updates on this thread; we’ll post again by xx:xx ET.
@@ -517,5 +510,12 @@ Timeline: xx:xx incident declared; xx:xx/xx:xx updates; xx:xx resolved.
 Actions: Bridge coordination; vendor comms; validation tests; user updates.
 Follow-up: Track vendor RCA; add Problem record; no internal changes required.
 ```
+<p>
+<img width="643" height="217" alt="1 3 close" src="https://github.com/user-attachments/assets/953cf270-657a-4a9e-accb-871871f718ff" />
+</p>
 
 **Finally, Close the parent incident.**
+
+---
+
+**Congrats! Your first few mock tickets are in the books!** Keep the momentum going by using an AI to generate fresh scenarios and sharpen your workflow.
