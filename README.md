@@ -26,6 +26,8 @@ This guide walks you through a complete ticket lifecycle in **osTicket** from in
 - [Ticket 2 — Report a Problem → Hardware](#ticket-2--report-a-problem--hardware)
 - [Ticket 3 — Mis-categorized “Report a Problem” → Service Outage](#ticket-3--mis-categorized-report-a-problem--service-outage)
 
+
+
 ---
 
 ## Open Two Windows
@@ -495,7 +497,7 @@ Next steps: Vendor is reviewing safeguards; we will monitor for recurrence.
 If you continue to experience sign-in issues, reply here and we’ll assist.
 ```
 
-- Child tickets — close/resolve each with a short public note:
+- Child tickets — close/resolve each with a short public reply:
 ```text
 This was part of the Email/Teams sign-in incident. Service has been restored.
 If you’re still affected, reply here and we’ll reopen.
