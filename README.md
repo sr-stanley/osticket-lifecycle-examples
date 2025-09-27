@@ -5,7 +5,7 @@
 
 <h1>osTicket - Ticket Lifecycle: Intake Through Resolution</h1>
 
-This guide walks you through a complete ticket lifecycle in **osTicket** from intake to resolution. You’ll play the roles of the **end user** and the **three agents** you created earlier. Each step includes a short note on **why it matters**. We will not be able to perform the actual work but we will act as if we did.
+This guide walks you through a complete ticket lifecycle in **osTicket** from intake to resolution. You’ll play the roles of the **end user** and the **three agents** you created earlier. We will not be able to perform the actual work but we will act as if we did.
 
 <h2>Environments and Technologies Used</h2>
 
@@ -115,13 +115,13 @@ Submit: *“Forgot password, need password reset.”*
 </p>
 
 - Next lets login as your Tier 1 Agent:
-**Agent (Tier 1) → Check auto-routing**
+**Check auto-routing**
 
 <p>
 <img width="953" height="356" alt="ticket 1 1 login agent" src="https://github.com/user-attachments/assets/309a4cff-0c81-47d1-8540-cb6e99c397f0" />
 </p>
 
-- Dept **Help Desk** → Team **Accounts & Passwords** → Priority **Normal** → SLA **P3**
+- Department **Help Desk** → Team **Accounts & Passwords** → Priority **Normal** → SLA **P3**
 
 <p>
 <img width="955" height="268" alt="ticket 1 2 confirm routing" src="https://github.com/user-attachments/assets/d31f7e5a-937d-45da-89c3-f14ac12fb343" />
@@ -137,7 +137,9 @@ Submit: *“Forgot password, need password reset.”*
 - For higher risk, require **two** strong factors. **Never** rely on caller ID/SMS alone.
 
 Add an **Internal Note** (example):
-- Identity verified via callback to phone-on-file and employee ID.
+```text
+Identity verified via callback to phone-on-file and employee ID.
+```
 
 <p>
 <img width="948" height="336" alt="ticket 1 3 verify" src="https://github.com/user-attachments/assets/a665535f-9099-418f-b487-93fe6b52ce67" />
@@ -155,7 +157,9 @@ Add an **Internal Note** (example):
 - If MFA device is lost, remove old factor(s) so the user can re-register
 
 Add an **Internal Note** (example):
-- Actions: Cleared lockout; set temporary password (communicated verbally).
+```text
+Actions: Cleared lockout; set temporary password (communicated verbally).
+```
 
 <p>
 <img width="948" height="380" alt="ticket 1 4 actions" src="https://github.com/user-attachments/assets/5ec7dbcb-1220-46b2-bf6d-610dbb0c2408" />
@@ -170,7 +174,9 @@ Add an **Internal Note** (example):
 **5) Closeout**
 
 Add a **Public Reply** (example):
-- Per our call at 2:35 PM ET, we reset your password and confirmed sign-in. If anything stops working, just reply to this email and we’ll reopen the ticket.
+```text
+Per our call at 2:35 PM ET, we reset your password and confirmed sign-in. If anything stops working, just reply to this email and we’ll reopen the ticket.
+```
 
 <p>
 <img width="947" height="503" alt="ticket 1 4 final reply" src="https://github.com/user-attachments/assets/dc0bb3b6-e92e-4956-989f-0f713fd65957" />
@@ -179,7 +185,6 @@ Add a **Public Reply** (example):
 **Finishing: Set Status to Resolved (reopen allowed) or Closed (final), per policy.**
 
 ---
-
 
 ## Ticket 2 — Report a Problem → Hardware
 
@@ -192,13 +197,13 @@ Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*
 </p>
 
 - Next lets login as your Tier 1 Agent:
-**Agent (Tier 1) — Check auto-routing**
+**Check auto-routing**
 
 <p>
 <img width="950" height="333" alt="ticket 2 1 login agent" src="https://github.com/user-attachments/assets/371b12c5-8d58-4bac-8623-c91860a37e08" />
 </p>
 
-- Dept **Help Desk** → Team **PC Fix** → Priority **Normal** → SLA **P3**
+- Department **Help Desk** → Team **PC Fix** → Priority **Normal** → SLA **P3**
 
 <p>
 <img width="955" height="264" alt="ticket 2 2 confirm routing" src="https://github.com/user-attachments/assets/567fde11-921a-41f3-a8a9-5818e0ee22b1" />
@@ -211,7 +216,9 @@ Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*
 - Strong (for swaps/data access): callback to phone-on-file and badge/manager approval
 
 Add **Internal Note** (example):
-- Identity verified via in-person badge check.
+```text
+Identity verified via in-person badge check.
+```
 
 <p>
 <img width="947" height="278" alt="ticket 2 3 verify" src="https://github.com/user-attachments/assets/4238b682-7810-4e46-8dc6-919c631e2408" />
@@ -234,19 +241,22 @@ Add **Internal Note** (example):
 - Repair loop/BSOD ⇒ likely OS/image/driver
 
 Add **Internal Note** (example):
-- Bypass: USB-C from dock fully disconnected. OEM 130W barrel adapter direct to laptop → powers on and POSTs OK.
+```text
+Bypass: USB-C from dock fully disconnected. OEM 130W barrel adapter direct to laptop → powers on and POSTs OK.
 Assessment: Failed dock (WD19); user needs external display/power via dock.
-Action: Created Task → Maintenance to replace dock.
+Action: Created Task → Maintenance to replace dock.`
+```
 
 <p>
 <img width="948" height="446" alt="ticket 2 4 actions" src="https://github.com/user-attachments/assets/85195360-578d-4b8b-ac0b-a873880a4abd" />
 </p>
 
-**5) Create Task → Maintenance (onsite hardware/peripheral)**
+**5) Create Task → Maintenance (onsite hardware/peripheral)** 
+**Include: user name/location, asset/serial, symptoms, steps tried, photos (if helpful), diagnosis, what to bring, and an access window.**
 
 ```text
 Title: Onsite: Replace dock
-Description (template):
+Description (example):
 
 User: Karen (5E-112) | Callback (ending **3045**)
 Ticket: #828576
@@ -273,10 +283,8 @@ Window:
 <img width="744" height="629" alt="ticket 2 5 task" src="https://github.com/user-attachments/assets/3fdb0406-1072-4bc7-b8fd-97183e6bb422" />
 </p>
 
-**Include: user name/location, asset/serial, symptoms, steps tried, photos (if helpful), diagnosis, what to bring, and an access window.**
-
 **6) Maintenance works the Task**
-- Log out of **Agent (Tier 1)** profile and log into the **Maintenance Technicians** profile. Click on **Tasks** tab and view the task.
+- Log out of your **Tier 1 Agents** profile and log into the **Maintenance Technicians** profile. Click on **Tasks** tab and view the task.
 
 <p>
 <img width="953" height="354" alt="ticket 2 6 view task as maintenance worker" src="https://github.com/user-attachments/assets/9e2481b7-cf0b-4ebd-8019-906cd2ba9874" />
@@ -288,43 +296,36 @@ Window:
 - If still no power → device swap per SOP; capture new asset
 
 Add Maintenance **Close Task** Note (example):
-
-- Replaced dock (Dell WD19). Laptop powers on; passes POST/boot.
+```text
+Replaced dock (Dell WD19). Laptop powers on; passes POST/boot.
 Task closed. User confirms normal operation.
+```
 
 <p>
 <img width="642" height="306" alt="ticket 2 7 close task and post internal note" src="https://github.com/user-attachments/assets/c913093e-5a1d-415b-b399-21dfe6286b1a" />
 </p>
 
 **7) Help Desk closes the Ticket**
-- Log out of **Maintenance Technicians** profile and log into the **Agent (Tier 1)** profile. Add a closing public reply and then close the ticket.
-Post a short public wrap-up, then close.
+- Log out of **Maintenance Technicians** profile and log into your **Tier 1 Agents** profile. Add a closing public reply and then close the ticket.
+Post a short public wrap-up, then close. **Why this matters:** Tickets remain owned/closed by Help Desk (single point of accountability). Tasks track onsite work separately for Maintenance.
 
 Add a **Public Reply** (example):
-
-- We replaced your desk dock and confirmed your laptop powers on, boots, and the external display works.
+```text
+We replaced your desk dock and confirmed your laptop powers on, boots, and the external display works.
 If anything regresses, just reply here and we’ll reopen the ticket.
-
+```
 
 Add an **Internal Closing Note** (example):
-
-- Replaced dock (Dell WD19). Laptop powers on; passes POST/boot.
+```text
+Replaced dock (Dell WD19). Laptop powers on; passes POST/boot.
 Task closed. User confirms normal operation.
+```
 
 <p>
 <img width="642" height="306" alt="ticket 2 7 close task and post internal note" src="https://github.com/user-attachments/assets/01f61d7b-bc65-471b-a79c-8bde3eec8a64" />
 </p>
 
-
-**Why this matters:** Tickets remain owned/closed by Help Desk (single point of accountability). Tasks track onsite work separately for Maintenance.
-
-
-
-<br />
-
-
-
-
+---
 
 # Ticket 3 — Mis-categorized “Report a Problem” → Service Outage
 
@@ -340,7 +341,7 @@ Submit: *“Teams won’t sign in; email also failing across our floor.”*
 
 ### Resolution Steps
 
-- Login as your Tier 1 Agent:
+- Login as your ***Tier 1 Agent**.
 
 **1) Verify Identity (before any changes)**
 - Callback to **phone-on-file** (directory/HRIS)  
@@ -350,8 +351,9 @@ Submit: *“Teams won’t sign in; email also failing across our floor.”*
 - For higher-risk cases, use **two** strong factors
 
 Add a **Internal Note** (example):
-- Identity verified via manager-approved email confirmation.
-
+```text
+Identity verified via manager-approved email confirmation.
+```
 
 **2) Quick Scope & Triage**
 
@@ -364,10 +366,12 @@ Because the report may be broader than one user, T1 should immediately check sco
   - Teams sign-in
 
 Add a **Internal Note** (example) and assign to your **Supervisor**agent:
-- "Scope: Multiple new tickets with identical symptoms (Email/Teams sign-in failures).
+```text
+Scope: Multiple new tickets with identical symptoms (Email/Teams sign-in failures).
 Checks: OWA sign-in fails; Teams shows auth error from test machine.
 Recommendation: Reclassify to Service Outage / Major Incident.
-Action: Escalated/assigned to Supervisor at xx:xx ET; awaiting comms cadence."
+Action: Escalated/assigned to Supervisor at xx:xx ET; awaiting comms cadence.
+```
 
 <p>
 <img width="640" height="247" alt="0 1 assign" src="https://github.com/user-attachments/assets/1bd5c6f1-22bb-42f0-a77f-da176122c22a" />
@@ -377,15 +381,16 @@ Action: Escalated/assigned to Supervisor at xx:xx ET; awaiting comms cadence."
 </p>
 
 Add a **Public Reply** (acknowledgement while you escalate):
-- "We’re investigating a broader sign-in issue affecting Email/Teams. I’ve alerted our incident lead.
-Thank you for your patience."
-
+```text
+We’re investigating a broader sign-in issue affecting Email/Teams. I’ve alerted our incident lead.
+Thank you for your patience.
+```
 
 **3) Re-categorize Ticket**
 
-Log out as Tier 1 and sign in as your Supervisor.
+Log out of your **Tier 1 Agents** profile and sign into your **Supervisors** profile.
 
-**Supervisor actions**
+**Supervisor Actions**
 
 Change the following:
 - Help Topic → Service Outage
@@ -393,17 +398,18 @@ Change the following:
 - Priority → Emergency
 - SLA → P1 Critical
 
-If you had additional tickets, you’d make this the Parent by using More → Link to attach related (child) tickets.
+**If you had additional tickets, you’d make this the Parent by using More → Link to attach related (child) tickets. See below for more information about this.**
 
 <p></p>
 <img width="641" height="331" alt="1 0 link" src="https://github.com/user-attachments/assets/3df06985-e42d-49ab-a1df-1a9bf85b3523" />
 </p>
 
 Add a **Internal Note** (example):
-- "Reclassified to Service Outage.
-Routing: Dept → Systems, Priority → Emergency, SLA → P1 (24×7).
-This ticket designated as PARENT TICKET for M365 auth failure."
-
+```text
+Reclassified to Service Outage.
+Routing: Department → Systems, Priority → Emergency, SLA → P1.
+This ticket designated as PARENT TICKET for M365 auth failure.
+```
 
 Add a **Public Reply** (initial incident notice):
 - "We’re investigating a service issue affecting sign-ins to Email/Teams.
@@ -413,84 +419,78 @@ Next update in ~30 minutes. Thank you for your patience."
 <img width="952" height="575" alt="1 1 super notes" src="https://github.com/user-attachments/assets/6a7d62f3-c096-4588-b4ec-5c983c94bc03" />
 </p>
 
+**4) Supervisor Becomes Incident Lead (Updates & Investigation)**
 
+**Actions**
+- Launch a incident channel/bridge (if your SOP uses one)
+  - Start/announce your comms cadence (e.g., every 30 minutes until mitigation).
+- Coordinate Systems to check:
+  - Provider status (e.g., Microsoft 365 health)
+  - Identity/CA/IdP (Entra/SSO) sign-in logs
+  - Network/DNS/firewall egress to auth endpoints
+  - Recent changes (policy, updates, certificates, proxies)
 
-**4) Supervisor — Lead the Incident (Updates & Investigation)**
-
-Start/announce your comms cadence (e.g., every 30 minutes until mitigation).
-
-Coordinate Systems to check:
-
-Provider status (e.g., Microsoft 365 health)
-
-Identity/CA/IdP (Entra/SSO) sign-in logs
-
-Network/DNS/firewall egress to auth endpoints
-
-Recent changes (policy, updates, certs, certs/proxies)
-
-Internal Note (investigation log — rolling):
-
+Add a **Internal Note** (investigation log):
+```text
 xx:xx ET – Incident bridge opened; Systems engaged.
 xx:xx ET – M365 Service Health indicates auth issues in our region.
 xx:xx ET – Firewall/DNS checks OK; no local change correlated.
 xx:xx ET – Impact confirmed: Email/Teams auth failures org-wide; no data loss suspected.
+```
 
-
-Public Reply (timed update — every 30–60 min):
-
+Add a **Public Reply** (timed update — every 30–60 min):
+```text
 [Update xx:xx ET] We’ve confirmed a provider-side authentication issue affecting Email/Teams.
 We are monitoring vendor recovery and validating workarounds. Next update by xx:xx ET.
+```
 
-T1 — Link Related (Child) Tickets
+**Procedure for linking *Child* tickets**
+*(Since we only have the one ticket open this is soley for understanding purposes.)*
 
-(For understanding; if you only have one ticket, skip this step.)
+While the **Supervisor Agent** is doing their job the **Tier 1 Agent** would start linking related (Child) tickets.
+- As **Tier 1 Agent**, for each similar ticket:
+  - More → Link → select the Parent Incident ticket
 
-As Tier 1, for each similar ticket:
+**Post short notes** (example):
 
-More → Link → select the Parent Incident ticket
-
-Post short notes:
-
-Child — Internal Note:
-
+- Child — Internal Note:
+```text
 Linked to Parent Incident #<parent-ticket#> (M365 auth). Follow parent for updates.
+```
 
-
-Child — Public Reply:
-
+- Child — Public Reply:
+```text
 We’ve linked your ticket to an active incident affecting Email/Teams sign-ins.
 Please follow updates on this thread; we’ll post again by xx:xx ET.
+```
+**Optionally merge only true duplicates from the same user.**
 
+**5) Supervisor (Recovery & Validation)**
 
-Optionally merge only true duplicates from the same user.
+- When the vendor reports recovery, validate internally:
+  - Test OWA/Outlook, Teams, and one SSO app
+  - Confirm with 2–3 sample users across locations
+  - Check sign-in error rates trending down
 
-Supervisor — Recovery & Validation
-
-When the vendor reports recovery, validate internally:
-
-Test OWA/Outlook, Teams, and one SSO app
-
-Confirm with 2–3 sample users across locations
-
-Check sign-in error rates trending down
-
-Internal Note (recovery confirmation):
-
+Add a **Internal Note** (recovery confirmation):
+```text
 xx:xx ET – Vendor reports mitigation complete.
 xx:xx ET – Internal tests successful (OWA, Teams, SSO).
 xx:xx ET – Sample users (User 1, User 2) confirm sign-in success.
+```
 
-
-Public Reply (restoration notice):
-
+Add a **Public Reply** (restoration notice):
+```text
 [Resolved xx:xx ET] Sign-ins to Email/Teams are working again.
 If you still have issues, please restart your app and try again; reply here if problems persist.
+```
 
-Closeout — Final Comms, RCA Blurb, Closure
+**6) Closeout — Final Comms, RCA Blurb, Closure**
 
-Parent (public final summary):
+**Post final notes** (example):
 
+- Parent Ticket (public final summary):
+```text
 Final Update – Incident Resolved
 
 Cause (per vendor): Transient authentication issue impacting our region.
@@ -499,21 +499,21 @@ Actions: Monitored vendor recovery; validated sign-in across sites; no data loss
 Next steps: Vendor is reviewing safeguards; we will monitor for recurrence.
 
 If you continue to experience sign-in issues, reply here and we’ll assist.
+```
 
-
-Child tickets — close/resolve each with a short public note:
-
+- Child tickets — close/resolve each with a short public note:
+```text
 This was part of the Email/Teams sign-in incident. Service has been restored.
 If you’re still affected, reply here and we’ll reopen.
+```
 
-
-Parent — Internal Note (closing summary):
-
+- Parent — Internal Note (closing summary):
+```text
 Outcome: Service restored xx:xx ET; users validated across sites.
 Root cause: Vendor authentication incident (regional).
 Timeline: xx:xx incident declared; xx:xx/xx:xx updates; xx:xx resolved.
 Actions: Bridge coordination; vendor comms; validation tests; user updates.
 Follow-up: Track vendor RCA; add Problem record; no internal changes required.
+```
 
-
-Finally, Close the parent incident.
+**Finally, Close the parent incident.**
