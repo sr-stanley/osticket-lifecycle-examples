@@ -412,8 +412,10 @@ This ticket designated as PARENT TICKET for M365 auth failure.
 ```
 
 Add a **Public Reply** (initial incident notice):
-- "We’re investigating a service issue affecting sign-ins to Email/Teams.
+```text
+We’re investigating a service issue affecting sign-ins to Email/Teams.
 Next update in ~30 minutes. Thank you for your patience."
+```
 
 <p></p>
 <img width="952" height="575" alt="1 1 super notes" src="https://github.com/user-attachments/assets/6a7d62f3-c096-4588-b4ec-5c983c94bc03" />
