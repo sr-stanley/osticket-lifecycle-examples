@@ -206,7 +206,7 @@ Submit: *“Recently moved to a new office; now my laptop won’t turn on.”*
 - Light: reply from corporate email or asset tag + desk location
 - Strong (for swaps/data access): callback to phone-on-file and badge/manager approval
 
-Add **Internal Note** (example):
+Add an **Internal Note** (example):
 ```text
 Identity verified via in-person badge check.
 ```
@@ -231,7 +231,7 @@ Identity verified via in-person badge check.
 - No lights/fans/POST ⇒ likely hardware
 - Repair loop/BSOD ⇒ likely OS/image/driver
 
-Add **Internal Note** (example):
+Add an **Internal Note** (example):
 ```text
 Bypass: USB-C from dock fully disconnected. OEM 130W barrel adapter direct to laptop → powers on and POSTs OK.
 Assessment: Failed dock (WD19); user needs external display/power via dock.
