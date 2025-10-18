@@ -8,7 +8,7 @@ This guide walks you through a complete ticket lifecycle in **osTicket** from in
 
 <h2>Environments and Technologies Used</h2>
 
-- Microsoft Azure (Virtual Machines)
+- Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
 - Internet Information Services (IIS)
 
